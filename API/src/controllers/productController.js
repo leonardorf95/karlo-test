@@ -57,9 +57,9 @@ const ProductController = {
     },
     create: async (req, res) => {
         try {
-            const todo = req.body;
+            const item = req.body;
 
-            await ProductModel.create(todo);
+            await ProductModel.create(item);
 
             return res.status(200).json({
                 message: 'Ok'
