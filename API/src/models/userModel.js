@@ -1,6 +1,6 @@
 import sequelize from 'sequelize';
 import dbConfig from '../database/dbConfig.js';
-import bcrypt from 'bcrypt-nodejs';
+import bcrypt from 'bcrypt';
 
 const UserModel = dbConfig.define('user', {
     id: {
