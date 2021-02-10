@@ -1,6 +1,8 @@
 import sequelize from 'sequelize';
 import dbConfig from '../database/dbConfig.js';
 
+import UserModel from '../models/userModel.js';
+
 const PurchaseOrderModel = dbConfig.define('purchase', {
     id: {
         type: sequelize.INTEGER,
@@ -22,5 +24,7 @@ const PurchaseOrderModel = dbConfig.define('purchase', {
     applyDiscount: sequelize.INTEGER(1),
     createdAt: sequelize.DATE
 });
+
+PurchaseOrderModel.belongsTo(UserModel);
 
 export default PurchaseOrderModel;

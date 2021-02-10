@@ -62,7 +62,8 @@ const PurchaseOrderController = {
                 subTotal: req.body.subTotal,
                 iva: req.body.iva,
                 total: req.body.total,
-                applyDiscount: req.body.applyDiscount
+                applyDiscount: req.body.applyDiscount,
+                userId: req.body.userId
             });
 
             if (!purchase) {
@@ -107,13 +108,15 @@ const PurchaseOrderController = {
                 subTotal,
                 iva,
                 total,
-                applyDiscount
+                applyDiscount,
+                userId
             } = req.body;
 
             item.subTotal = subTotal;
             item.iva = iva;
             item.total = total;
             item.applyDiscount = applyDiscount;
+            item.userId = userId;
 
             const itemDetail = await DetailOrderModel.findAll({
                 where: {
