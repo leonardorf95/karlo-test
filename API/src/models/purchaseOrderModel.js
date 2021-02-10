@@ -19,6 +19,7 @@ const PurchaseOrderModel = dbConfig.define('purchase', {
         type: sequelize.DECIMAL(18, 2),
         allowNull: false
     },
+    applyDiscount: sequelize.INTEGER(1),
     createdAt: sequelize.DATE
 });
 
