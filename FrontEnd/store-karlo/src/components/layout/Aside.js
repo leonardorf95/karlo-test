@@ -1,8 +1,20 @@
 import React, { Fragment } from 'react';
+import { useHistory } from 'react-router-dom';
+
 import { Link } from 'react-router-dom';
 
-
 const Aside = () => {
+    // Instanciacion de Hook history de react-redux
+    const history = useHistory();
+
+    const submitLogut = e => {
+        e.preventDefault();
+
+        localStorage.removeItem('token');
+
+        history.push('/auth/singin');
+    }
+
     return (
         <Fragment>
             <aside className="col-12 col-sm-3 p-0 bg-dark flex-shrink-1">
@@ -37,9 +49,13 @@ const Aside = () => {
                             </li>
                             
                             <li className="nav-item">
-                                <Link to='/' className='nav-link px-0 text-truncate'>
+                                <button 
+                                    type='button' 
+                                    className='btn btn-link px-0 text-truncate' 
+                                    onClick={submitLogut}
+                                >
                                     <i className="fa fa-bullseye fa-fw"></i> Cerrar Sesión
-                                </Link>
+                                </button>
                             </li>
                         </ul>
                     </div>
