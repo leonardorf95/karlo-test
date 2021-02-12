@@ -41,7 +41,7 @@ const SingIn = () => {
             password
         });
 
-        history.push('/');
+        window.location.href = '/';
     }
 
     return (
