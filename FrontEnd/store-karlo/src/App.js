@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store/store';
 
+import PrivateRoute from './PrivateRoute';
+
 import Main from './components/layout/Main';
 
 import SingUp from './components/auth/SingUp';
@@ -27,23 +29,23 @@ const App = () => {
     <Fragment>
       <Router>
         <Provider store={store}>
-          <Switch>
-            <Route exact path='/' component={Main} />
+          <Switch>            
             <Route exact path='/auth/singup' component={SingUp} />
             <Route exact path='/auth/singin' component={SingIn} />
             <Route exact path='/auth/forgot' component={ForgotPassword} />
 
-            <Route exact path='/products/' component={Products} />
-            <Route exact path='/products/new' component={FormNewProduct} />
-            <Route exact path='/products/edit/:id' component={FormEditProduct} />
+            <PrivateRoute exact path='/' component={Main} />
+            <PrivateRoute exact path='/products/' component={Products} />
+            <PrivateRoute exact path='/products/new' component={FormNewProduct} />
+            <PrivateRoute exact path='/products/edit/:id' component={FormEditProduct} />
 
-            <Route exact path='/purchase/' component={Purchases} />
-            <Route exact path='/purchase/new' component={FormNewPurchase} />
-            <Route exact path='/purchase/:id' component={Purchase} />
+            <PrivateRoute exact path='/purchase/' component={Purchases} />
+            <PrivateRoute exact path='/purchase/new' component={FormNewPurchase} />
+            <PrivateRoute exact path='/purchase/:id' component={Purchase} />
 
-            <Route exact path='/users/' component={Users} />
-            <Route exact path='/users/new' component={FormNewUser} />
-            <Route exact path='/users/detail/:id' component={FormEditUser} />
+            <PrivateRoute exact path='/users/' component={Users} />
+            <PrivateRoute exact path='/users/new' component={FormNewUser} />
+            <PrivateRoute exact path='/users/detail/:id' component={FormEditUser} />
           </Switch>
         </Provider>
       </Router>
