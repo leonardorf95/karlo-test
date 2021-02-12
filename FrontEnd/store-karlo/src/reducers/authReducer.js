@@ -1,5 +1,5 @@
 import {
-    SINGIN, SINGIN_EXITO, SINGIN_ERROR, SINGOUT
+    SINGIN, SINGIN_EXITO, SINGIN_ERROR
 } from '../types/index';
 
 const initialState = {
@@ -29,12 +29,6 @@ export default function (state = initialState, action) {
                 user: null,
                 error: false,
                 loading: false
-            }
-        case SINGOUT:
-            return {
-                ...state,
-                token: null,
-                user: null
             }
         default:
             return state;

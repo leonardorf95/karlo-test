@@ -1,5 +1,5 @@
 import {
-    SINGIN, SINGIN_EXITO, SINGIN_ERROR, SINGOUT
+    SINGIN, SINGIN_EXITO, SINGIN_ERROR
 } from '../types/index';
 
 import clientAxios from '../config/clientAxios';
@@ -45,16 +45,4 @@ const singInSuccess = token => ({
 const singInError = state => ({
     type: SINGIN_ERROR,
     payload: state
-});
-
-export function logOutAction(){
-    return (dispatch) => {
-        localStorage.removeItem('token');
-
-        dispatch(singOut());
-    }
-}
-
-const singOut = () => ({
-    type: SINGOUT
 });
