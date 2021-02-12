@@ -10,15 +10,14 @@ import Main from './components/layout/Main';
 
 import SingUp from './components/auth/SingUp';
 import SingIn from './components/auth/SingIn';
-import ForgotPassword from './components/auth/ForgotPassword';
 
 import Products from './components/produts/Products';
 import FormNewProduct from './components/produts/FormNewProduct';
 import FormEditProduct from './components/produts/FormEditProduct';
 
 import Purchases from './components/purchase/Purchases';
-import Purchase from './components/purchase/Purchase';
 import FormNewPurchase from './components/purchase/FormNewPurchase';
+import DetailPurchase from './components/purchase/DetailPurchase';
 
 import Users from './components/users/Users';
 import FormNewUser from './components/users/FormNewUser';
@@ -32,7 +31,6 @@ const App = () => {
           <Switch>            
             <Route exact path='/auth/singup' component={SingUp} />
             <Route exact path='/auth/singin' component={SingIn} />
-            <Route exact path='/auth/forgot' component={ForgotPassword} />
 
             <PrivateRoute exact path='/' component={Main} />
             <PrivateRoute exact path='/products/' component={Products} />
@@ -41,7 +39,7 @@ const App = () => {
 
             <PrivateRoute exact path='/purchase/' component={Purchases} />
             <PrivateRoute exact path='/purchase/new' component={FormNewPurchase} />
-            <PrivateRoute exact path='/purchase/:id' component={Purchase} />
+            <PrivateRoute exact path='/purchase/detail/:id' component={DetailPurchase} />
 
             <PrivateRoute exact path='/users/' component={Users} />
             <PrivateRoute exact path='/users/new' component={FormNewUser} />
