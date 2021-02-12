@@ -43,7 +43,7 @@ const App = () => {
 
             <Route exact path='/users/' component={Users} />
             <Route exact path='/users/new' component={FormNewUser} />
-            <Route exact path='/users/edit/:id' component={FormEditUser} />
+            <Route exact path='/users/detail/:id' component={FormEditUser} />
           </Switch>
         </Provider>
       </Router>
