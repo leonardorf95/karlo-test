@@ -10,6 +10,6 @@ export default combineReducers({
     products: productReducer,
     alert: alertReducer,
     users: userReducer,
-    purchase: purchaseReducer,
+    purchases: purchaseReducer,
     auth: authReducer
 });
