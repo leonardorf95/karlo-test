@@ -7,6 +7,7 @@ import cors from 'cors';
 import authRouter from './routes/authRoute.js';
 import productRouter from './routes/productRoute.js';
 import purchaseOrderRouter from './routes/purchaseOrderRoute.js';
+import userRouter from './routes/userRoute.js';
 
 // Inicializacion de server
 const server = express();
@@ -21,6 +22,7 @@ server.use(cors());
 server.use('/api', authRouter);
 server.use('/api', productRouter);
 server.use('/api', purchaseOrderRouter);
+server.use('/api', userRouter);
 
 // Exportación de toda la configuración del servidor
 export default server;
