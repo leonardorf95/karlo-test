@@ -1,7 +1,6 @@
 import {
     AGREGAR_USUARIO, AGREGAR_USUARIO_EXITO, AGREGAR_USUARIO_ERROR, LISTADO_USUARIOS, LISTADO_USUARIOS_EXITO, LISTADO_USUARIOS_ERROR,
-    OBTENER_USUARIO_ELIMINAR, USUARIO_ELIMINADO_EXITO, USUARIO_ELIMINADO_ERROR, OBTENER_USUARIO_EDITAR, USUARIO_EDITADO_EXITO, USUARIO_EDITADO_ERROR,
-    COMENZAR_EDICION_USUARIO
+    OBTENER_USUARIO_ELIMINAR, USUARIO_ELIMINADO_EXITO, USUARIO_ELIMINADO_ERROR, OBTENER_USUARIO
 } from '../types/index';
 
 const initialState = {
@@ -9,7 +8,7 @@ const initialState = {
     error: false,
     loading: false,
     userToDelete: null,
-    userToUpdate: null
+    userByOne: null
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -30,7 +29,6 @@ export default function (state = initialState, action) {
         case AGREGAR_USUARIO_ERROR:
         case LISTADO_USUARIOS_ERROR:
         case USUARIO_ELIMINADO_ERROR:
-        case USUARIO_EDITADO_ERROR:
             return {
                 ...state,
                 loading: false,
@@ -53,16 +51,10 @@ export default function (state = initialState, action) {
                 ...state,
                 users: state.users.filter(user => user.id !== state.userToDelete)
             }
-        case OBTENER_USUARIO_EDITAR:
+        case OBTENER_USUARIO:
             return {
                 ...state,
-                userToUpdate: action.payload
-            }
-        case USUARIO_EDITADO_EXITO:
-            return {
-                ...state,
-                userToUpdate: null,
-                users: state.users.map(user => user.id === action.payload ? user = action.payload : user)
+                userByOne: action.payload
             }
         default:
             return state;

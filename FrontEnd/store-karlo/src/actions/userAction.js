@@ -1,7 +1,6 @@
 import {
     AGREGAR_USUARIO, AGREGAR_USUARIO_EXITO, AGREGAR_USUARIO_ERROR, LISTADO_USUARIOS, LISTADO_USUARIOS_EXITO, LISTADO_USUARIOS_ERROR,
-    OBTENER_USUARIO_ELIMINAR, USUARIO_ELIMINADO_EXITO, USUARIO_ELIMINADO_ERROR, OBTENER_USUARIO_EDITAR, USUARIO_EDITADO_EXITO, USUARIO_EDITADO_ERROR,
-    COMENZAR_EDICION_USUARIO
+    OBTENER_USUARIO_ELIMINAR, USUARIO_ELIMINADO_EXITO, USUARIO_ELIMINADO_ERROR, OBTENER_USUARIO
 } from '../types/index';
 
 import clientAxios from '../config/clientAxios';
@@ -144,53 +143,13 @@ const deleteUserError = state => ({
     payload: state
 });
 
-export function getUserToEdit(user) {
+export function getUserToAction(user) {
     return async (dispatch) => {
-        dispatch(getUserToAction(user));
+        dispatch(getUser(user));
     }
 }
 
-const getUserToAction = user => ({
-    type: OBTENER_USUARIO_EDITAR,
+const getUser = user => ({
+    type: OBTENER_USUARIO,
     payload: user
-});
-
-export function updateUserAction(user) {
-    return async (dispatch) => {
-        dispatch(editUser());
-
-        try {
-            await clientAxios.put(`/api/users/${user.id}`, user, {
-                headers: {
-                    'x-access-token': token
-                }
-            });
-
-            dispatch(updateUserSuccess(user));
-        } catch (error) {
-            console.log(error);
-
-            dispatch(updateUserError(true));
-
-            Swal.fire({
-                icon: 'error',
-                title: 'Se produjo un error',
-                text: 'Hubo un error verifica que la conexión sea estable'
-            });
-        }
-    }
-}
-
-const editUser = () => ({
-    type: COMENZAR_EDICION_USUARIO
-})
-
-const updateUserSuccess = user => ({
-    type: USUARIO_EDITADO_EXITO,
-    payload: user
-});
-
-const updateUserError = state => ({
-    type: USUARIO_EDITADO_ERROR,
-    payload: state
 });
