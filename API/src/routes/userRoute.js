@@ -1,9 +1,12 @@
 import express from 'express';
 
+import AuthController from '../controllers/authController.js';
 import UserController from '../controllers/userController.js';
 import AuthMiddleware from '../middlewares/authMiddleware.js';
 
 const router = express.Router();
+
+router.post('/users', AuthController.singIn);
 
 router.get('/users', 
     AuthMiddleware.verifyToken, 
