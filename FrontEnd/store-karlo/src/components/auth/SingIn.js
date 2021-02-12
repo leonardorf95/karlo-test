@@ -58,7 +58,7 @@ const SingIn = () => {
                         onSubmit={submitLogin}
                     >
                         <div className="form-group">
-                            <label for="txtEmail">Email address</label>
+                            <label htmlFor="txtEmail">Email address</label>
 
                             <input
                                 type="email"
@@ -71,7 +71,7 @@ const SingIn = () => {
                         </div>
 
                         <div className="form-group">
-                            <label for="txtPassword">Password</label>
+                            <label htmlFor="txtPassword">Password</label>
 
                             <input
                                 type="password"

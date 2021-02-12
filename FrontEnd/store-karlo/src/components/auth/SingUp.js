@@ -83,7 +83,7 @@ const SingUp = ({ history }) => {
                         onSubmit={submitANewUser}
                     >
                         <div className="form-group">
-                            <label for="txtName">Nombre</label>
+                            <label htmlFor="txtName">Nombre</label>
 
                             <input
                                 type="text"
@@ -96,7 +96,7 @@ const SingUp = ({ history }) => {
                         </div>
 
                         <div className="form-group">
-                            <label for="txtEmail">Email address</label>
+                            <label htmlFor="txtEmail">Email address</label>
 
                             <input
                                 type="email"
@@ -109,7 +109,7 @@ const SingUp = ({ history }) => {
                         </div>
 
                         <div className="form-group">
-                            <label for="txtPassword">Password</label>
+                            <label htmlFor="txtPassword">Password</label>
 
                             <input
                                 type="password"
@@ -122,7 +122,7 @@ const SingUp = ({ history }) => {
                         </div>
 
                         <div className="form-group">
-                            <label for="txtConfirmPassword">Confirmar Password</label>
+                            <label htmlFor="txtConfirmPassword">Confirmar Password</label>
 
                             <input
                                 type="password"

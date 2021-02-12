@@ -61,7 +61,7 @@ const FormEditUser = () => {
                             onSubmit={submitDetail}
                         >
                             <div className="form-group">
-                                <label for="txtName">Nombre</label>
+                                <label htmlFor="txtName">Nombre</label>
 
                                 <input 
                                     type="text" 
@@ -73,7 +73,7 @@ const FormEditUser = () => {
                             </div>
 
                             <div className="form-group">
-                                <label for="txtEmail">Email address</label>
+                                <label htmlFor="txtEmail">Email address</label>
 
                                 <input 
                                     type="email" 
