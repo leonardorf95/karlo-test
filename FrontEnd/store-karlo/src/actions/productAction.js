@@ -1,7 +1,7 @@
 import {
     AGREGAR_PRODUCTO, AGREGAR_PRODUCTO_EXITO, AGREGAR_PRODUCTO_ERROR, LISTADO_PRODUCTOS, LISTADO_PRODUCTOS_EXITO, LISTADO_PRODUCTOS_ERROR,
-    OBTENER_PRODUCTO_ELIMINAR, PRODCUTO_ELIMINADO_EXITO, PRODCUTO_ELIMINADO_ERROR, OBTENER_PRODUCTO_EDITAR, COMENZAR_EDICION_PRODUCTO, PRODCUTO_EDITADO_EXITO,
-    PRODCUTO_EDITADO_ERROR
+    OBTENER_PRODUCTO_ELIMINAR, PRODUCTO_ELIMINADO_EXITO, PRODUCTO_ELIMINADO_ERROR, OBTENER_PRODUCTO_EDITAR, COMENZAR_EDICION_PRODUCTO, PRODUCTO_EDITADO_EXITO,
+    PRODUCTO_EDITADO_ERROR
 } from '../types/index';
 
 import clientAxios from '../config/clientAxios';
@@ -147,11 +147,11 @@ const getProductToDelete = id => ({
 });
 
 const deleteSuccess = () => ({
-    type: PRODCUTO_ELIMINADO_EXITO
+    type: PRODUCTO_ELIMINADO_EXITO
 });
 
 const deleteError = () => ({
-    type: PRODCUTO_ELIMINADO_ERROR,
+    type: PRODUCTO_ELIMINADO_ERROR,
     payload: true
 });
 
@@ -200,11 +200,11 @@ const editProduct = () => ({
 });
 
 const updatedSuccess = product => ({
-    type: PRODCUTO_EDITADO_EXITO,
+    type: PRODUCTO_EDITADO_EXITO,
     payload: product
 });
 
 const updateError = () => ({
-    type: PRODCUTO_EDITADO_ERROR,
+    type: PRODUCTO_EDITADO_ERROR,
     payload: true
 });

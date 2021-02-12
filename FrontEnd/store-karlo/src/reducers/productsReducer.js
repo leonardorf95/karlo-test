@@ -1,6 +1,6 @@
 import {
     AGREGAR_PRODUCTO, AGREGAR_PRODUCTO_EXITO, AGREGAR_PRODUCTO_ERROR, LISTADO_PRODUCTOS, LISTADO_PRODUCTOS_EXITO, LISTADO_PRODUCTOS_ERROR,
-    OBTENER_PRODUCTO_ELIMINAR, PRODCUTO_ELIMINADO_EXITO, PRODCUTO_ELIMINADO_ERROR, OBTENER_PRODUCTO_EDITAR, COMENZAR_EDICION_PRODUCTO, PRODCUTO_EDITADO_EXITO, PRODCUTO_EDITADO_ERROR
+    OBTENER_PRODUCTO_ELIMINAR, PRODUCTO_ELIMINADO_EXITO, PRODUCTO_ELIMINADO_ERROR, OBTENER_PRODUCTO_EDITAR, COMENZAR_EDICION_PRODUCTO, PRODUCTO_EDITADO_EXITO, PRODUCTO_EDITADO_ERROR
 } from '../types/index';
 
 const initialState = {
@@ -28,8 +28,8 @@ export default function (state = initialState, action) {
             }
         case LISTADO_PRODUCTOS_ERROR:
         case AGREGAR_PRODUCTO_ERROR:
-        case PRODCUTO_ELIMINADO_ERROR:
-        case PRODCUTO_EDITADO_ERROR:
+        case PRODUCTO_ELIMINADO_ERROR:
+        case PRODUCTO_EDITADO_ERROR:
             return {
                 ...state,
                 loading: false,
@@ -47,7 +47,7 @@ export default function (state = initialState, action) {
                 ...state,
                 productDelete: action.payload
             }
-        case PRODCUTO_ELIMINADO_EXITO:
+        case PRODUCTO_ELIMINADO_EXITO:
             return {
                 ...state,
                 products: state.products.filter(product => product.id !== state.productDelete)
@@ -57,7 +57,7 @@ export default function (state = initialState, action) {
                 ...state,
                 productUpdate: action.payload
             }
-        case PRODCUTO_EDITADO_EXITO:
+        case PRODUCTO_EDITADO_EXITO:
             return {
                 ...state,
                 productUpdate: null,
