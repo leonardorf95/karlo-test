@@ -10,7 +10,7 @@ export function logInAction(user) {
         dispatch(singIn());
 
         try {
-            const response = await clientAxios.get('/api/auth/', user);
+            const response = await clientAxios.post(`/api/users/`, user);
 
             const token = response.data.token;
 
