@@ -7,7 +7,7 @@ import {
 import clientAxios from '../config/clientAxios';
 import Swal from 'sweetalert2';
 
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjEzMTAwMjA5LCJleHAiOjE2MTMxMDM4MDl9.BlBGTcySsw9si9ZrG70GqtnWLiXHPkD2ajmilf9oZ-I';
+const token = localStorage.getItem('token');
 
 // Funcion que se mandara a llamnar en el componente 
 export function createNewProductAction(product) {

@@ -6,7 +6,7 @@ import {
 import clientAxios from '../config/clientAxios';
 import Swal from 'sweetalert2';
 
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjEzMTA1MjUxLCJleHAiOjE2MTMxMDg4NTF9.FiXYhARboA66aFgusINxTsU8ajqNrG3NbLHWjBdHEes';
+const token = localStorage.getItem('token');
 
 export function createNewUserAction(user) {
     return async (dispatch) => {
