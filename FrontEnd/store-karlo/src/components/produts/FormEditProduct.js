@@ -42,7 +42,7 @@ const FormEditProduct = () => {
     const { name, quantity, price } = product;
 
     // Metodo para enviar la informacion al dispatch de actualizado
-    const sumitUpdateProduct = e => {
+    const submitUpdateProduct = e => {
         e.preventDefault();
 
         dispatch(updateProdutAction(product));
@@ -61,7 +61,7 @@ const FormEditProduct = () => {
                         <h1>Edita el producto</h1>
 
                         <form
-                            onSubmit={sumitUpdateProduct}
+                            onSubmit={submitUpdateProduct}
                         >
                             <div className="form-group">
                                 <label htmlFor="txtName">Nombre</label>
