@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { logInAction } from '../../actions/authAction';
 import { showAlert, hideAlert } from '../../actions/alertAction';
@@ -84,7 +85,11 @@ const SingIn = () => {
                         </div>
 
                         <div className="form-group float-right">
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <Link to={'/auth/singup'} className='btn btn-link'>
+                                Crear cuenta
+                            </Link>
+
+                            <button type="submit" className="btn btn-primary">Iniciar Sesión</button>
                         </div>
                     </form>
                 </div>

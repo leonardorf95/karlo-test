@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { createNewUserAction } from '../../actions/userAction';
 import { showAlert, hideAlert } from '../../actions/alertAction';
@@ -135,7 +136,11 @@ const SingUp = ({ history }) => {
                         </div>
 
                         <div className="form-group float-right">
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                        <Link to={'/auth/singin'} className='btn btn-link'>
+                                Iniciar Sesion
+                            </Link>
+
+                            <button type="submit" className="btn btn-primary">Crear Cuenta</button>
                         </div>
                     </form>
 
