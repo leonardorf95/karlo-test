@@ -17,7 +17,6 @@ import FormEditProduct from './components/produts/FormEditProduct';
 
 import Purchases from './components/purchase/Purchases';
 import FormNewPurchase from './components/purchase/FormNewPurchase';
-import DetailPurchase from './components/purchase/DetailPurchase';
 
 import Users from './components/users/Users';
 import FormNewUser from './components/users/FormNewUser';
@@ -39,7 +38,6 @@ const App = () => {
 
             <PrivateRoute exact path='/purchase/' component={Purchases} />
             <PrivateRoute exact path='/purchase/new' component={FormNewPurchase} />
-            <PrivateRoute exact path='/purchase/detail/:id' component={DetailPurchase} />
 
             <PrivateRoute exact path='/users/' component={Users} />
             <PrivateRoute exact path='/users/new' component={FormNewUser} />
