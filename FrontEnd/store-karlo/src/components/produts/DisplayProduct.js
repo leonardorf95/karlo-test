@@ -55,7 +55,8 @@ const DisplayProduct = ({ product }) => {
                     >
                         Editar
                     </button>
-
+                </td>
+                <td>
                     <button
                         type='button'
                         className='btn btn-danger'

@@ -29,31 +29,33 @@ const Users = () => {
 
                     <main className="col bg-faded py-3">
                         <div className="row">
-                            <div className="col-md-8">
+                            <div className="col-md-12 text-center">
                                 <h1>Listado de Usuarios</h1>
+
+                                <br />
 
                                 {error ? (<p className='font-weight-bold alert alert-danger text-center mt-4'>Hubo un error</p>) : null}
 
                                 {loadingProcess ? (<p className='text-center mt-4'>Cargando...</p>) : null}
                             </div>
-
-                            <div className="col-md-4">
-                                <Link to={'/users/new'} className='btn btn-success btn-small'>
-                                    Agregar Usuario
-                                </Link>
-                            </div>
                         </div>
 
+<hr/>
                         <div className="row">
-                            <div className="col-md-2"></div>
+                            <div className="col-md-3"></div>
 
-                            <div className="col-md-10">
+                            <div className="col-md-6 text-center">
                                 <table className='table table-responsive'>
                                     <thead className='thead-dark'>
                                         <tr>
                                             <th scope='col'>Nombre</th>
                                             <th scope='col'>Email</th>
                                             <th scope='col'>Acciones</th>
+                                            <th scope='col'>
+                                                <Link to={'/users/new'} className='btn btn-success btn-small'>
+                                                    <i class="fas fa-plus"></i>
+                                                </Link>
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -68,6 +70,8 @@ const Users = () => {
                                     </tbody>
                                 </table>
                             </div>
+
+                            <div className="col-md-3"></div>
                         </div>
                     </main>
                 </div>

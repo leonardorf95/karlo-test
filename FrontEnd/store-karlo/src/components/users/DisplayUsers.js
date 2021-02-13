@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { deleteUserAction, getUserToAction } from '../../actions/userAction';
 
 const DisplayUsers = ({ user }) => {
-    const {id, name, email} = user;
+    const { id, name, email } = user;
 
     // Instanciacion de Hook dispatch de react-redux
     const dispatch = useDispatch(); // Ejecucion de actions
@@ -53,7 +53,8 @@ const DisplayUsers = ({ user }) => {
                     >
                         Ver detalle
                     </button>
-
+                </td>
+                <td>
                     <button
                         type='button'
                         className='btn btn-danger'

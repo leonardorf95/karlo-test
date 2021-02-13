@@ -32,25 +32,23 @@ const Purchases = () => {
 
                     <main className="col bg-faded py-3">
                         <div className="row">
-                            <div className="col-md-8">
+                            <div className="col-md-12 text-center">
                                 <h1>Listado de Ordenes de compra</h1>
+
+                                <br />
 
                                 {error ? (<p className='font-weight-bold alert alert-danger text-center mt-4'>Hubo un error</p>) : null}
 
                                 {loadingProcess ? (<p className='text-center mt-4'>Cargando...</p>) : null}
                             </div>
-
-                            <div className="col-md-4">
-                                <Link to={'/purchase/new'} className='btn btn-success btn-small'>
-                                    Agregar Orden de Compra
-                                </Link>
-                            </div>
                         </div>
 
-                        <div className="row">
-                            <div className="col-md-2"></div>
+                        <hr />
 
-                            <div className="col-md-10">
+                        <div className="row">
+                            <div className="col-md-3"></div>
+
+                            <div className="col-md-6 text-center">
                                 <table className='table table-responsive'>
                                     <thead className='thead-dark'>
                                         <tr>
@@ -59,6 +57,11 @@ const Purchases = () => {
                                             <th scope='col'>Iva</th>
                                             <th scope='col'>Total</th>
                                             <th scope='col'>Acciones</th>
+                                            <th scope='col'>
+                                                <Link to={'/purchase/new'} className='btn btn-success btn-small'>
+                                                    <i class="fas fa-plus"></i>
+                                                </Link>
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -73,11 +76,13 @@ const Purchases = () => {
                                     </tbody>
                                 </table>
                             </div>
+                            
+                            <div className="col-md-3"></div>
                         </div>
                     </main>
                 </div>
             </div>
-        </Fragment>
+        </Fragment >
     )
 }
 

@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { deletePurchaseAction, getPurchaseToAction } from '../../actions/purchaseAction';
 
 const DisplayPurchase = ({ purchase }) => {
-    const {id, subTotal, iva, total} = purchase;
+    const { id, subTotal, iva, total } = purchase;
 
     // Instanciacion de Hook dispatch de react-redux
     const dispatch = useDispatch(); // Ejecucion de actions
@@ -54,7 +54,8 @@ const DisplayPurchase = ({ purchase }) => {
                     >
                         Editar
                     </button>
-
+                </td>
+                <td>
                     <button
                         type='button'
                         className='btn btn-danger'
