@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { createNewUserAction } from '../../actions/userAction';
 import { showAlert, hideAlert } from '../../actions/alertAction';
+import logo from '../../img/user.png'
 
 const SingUp = ({ history }) => {
     // state del componente
@@ -72,83 +73,89 @@ const SingUp = ({ history }) => {
 
     return (
         <Fragment>
-            <div className="row">
-                <div className="col-md-3"></div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-3"></div>
 
-                <div className="col-md-6 mb-4">
-                    <h1>Crear Cuenta</h1>
+                    <div className="col-md-6 text-center">
+                        <div className="row">
+                            <img src={logo} className='center' alt="" srcSet="" />
 
-                    {alert ? (<p className={alert.classes}>{alert.message}</p>) : null}
-
-                    <form
-                        onSubmit={submitANewUser}
-                    >
-                        <div className="form-group">
-                            <label htmlFor="txtName">Nombre</label>
-
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="txtName"
-                                name='name'
-                                value={name}
-                                onChange={e => setName(e.target.value)}
-                            />
+                            {alert ? (<p className={alert.classes}>{alert.message}</p>) : null}
                         </div>
 
-                        <div className="form-group">
-                            <label htmlFor="txtEmail">Email address</label>
+                        <form
+                            onSubmit={submitANewUser}
+                        >
+                            <div className="form-group">
+                                <label htmlFor="txtName">Nombre</label>
 
-                            <input
-                                type="email"
-                                className="form-control"
-                                id="txtEmail"
-                                name='email'
-                                value={email}
-                                onChange={e => setEmail(e.target.value)}
-                            />
-                        </div>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="txtName"
+                                    name='name'
+                                    value={name}
+                                    onChange={e => setName(e.target.value)}
+                                />
+                            </div>
 
-                        <div className="form-group">
-                            <label htmlFor="txtPassword">Password</label>
+                            <div className="form-group">
+                                <label htmlFor="txtEmail">Email address</label>
 
-                            <input
-                                type="password"
-                                className="form-control"
-                                id="txtPassword"
-                                name='password'
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
-                            />
-                        </div>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    id="txtEmail"
+                                    name='email'
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value)}
+                                />
+                            </div>
 
-                        <div className="form-group">
-                            <label htmlFor="txtConfirmPassword">Confirmar Password</label>
+                            <div className="form-group">
+                                <label htmlFor="txtPassword">Password</label>
 
-                            <input
-                                type="password"
-                                className="form-control"
-                                id="txtConfirmPassword"
-                                name='confirm-password'
-                                value={confirmPassword}
-                                onChange={e => setConfirmPassword(e.target.value)}
-                            />
-                        </div>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    id="txtPassword"
+                                    name='password'
+                                    value={password}
+                                    onChange={e => setPassword(e.target.value)}
+                                />
+                            </div>
 
-                        <div className="form-group float-right">
-                        <Link to={'/auth/singin'} className='btn btn-link'>
-                                Iniciar Sesion
+                            <div className="form-group">
+                                <label htmlFor="txtConfirmPassword">Confirmar Password</label>
+
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    id="txtConfirmPassword"
+                                    name='confirm-password'
+                                    value={confirmPassword}
+                                    onChange={e => setConfirmPassword(e.target.value)}
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <button type="submit" className="btn btn-primary">Crear Cuenta</button>
+                            </div>
+
+                            <div className="form-group">
+                                <Link to={'/auth/singin'} className='btn btn-link'>
+                                    Iniciar Sesion
                             </Link>
+                            </div>
+                        </form>
 
-                            <button type="submit" className="btn btn-primary">Crear Cuenta</button>
-                        </div>
-                    </form>
+                        {loadingProcess ? <p>Cargando...</p> : null}
+                        {errorProcess ? <p className='alert alert-danger p2 mt-4 text-center'>Hubo un Error</p> : null}
+                    </div>
 
-                    {loadingProcess ? <p>Cargando...</p> : null}
-                    {errorProcess ? <p className='alert alert-danger p2 mt-4 text-center'>Hubo un Error</p> : null}
+                    <div className="col-md-3"></div>
                 </div>
-
-                <div className="col-md-3"></div>
             </div>
         </Fragment>
     )

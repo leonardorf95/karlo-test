@@ -1,17 +1,15 @@
 import React, { Fragment, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import { logInAction } from '../../actions/authAction';
 import { showAlert, hideAlert } from '../../actions/alertAction';
 
+import logo from '../../img/user.png'
+
 const SingIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    // Instanciacion de Hook history de react-redux
-    const history = useHistory();
 
     // utiliza use dispatch y te crea una funcion
     const dispatch = useDispatch();
@@ -41,60 +39,65 @@ const SingIn = () => {
             email,
             password
         });
-
-        window.location.href = '/';
     }
 
     return (
         <Fragment>
-            <div className="row">
-                <div className="col-md-3"></div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-3"></div>
 
-                <div className="col-md-6 mb-4">
-                    <h1>Iniciar Sesión</h1>
+                    <div className="col-md-6 text-center">
+                        <div className="row">
+                            <img src={logo} className='center' alt="" srcSet="" />
 
-                    {alert ? (<p className={alert.classes}>{alert.message}</p>) : null}
-
-                    <form
-                        onSubmit={submitLogin}
-                    >
-                        <div className="form-group">
-                            <label htmlFor="txtEmail">Email address</label>
-
-                            <input
-                                type="email"
-                                className="form-control"
-                                id="txtEmail"
-                                name='email'
-                                value={email}
-                                onChange={e => setEmail(e.target.value)}
-                            />
+                            {alert ? (<p className={alert.classes}>{alert.message}</p>) : null}
                         </div>
 
-                        <div className="form-group">
-                            <label htmlFor="txtPassword">Password</label>
+                        <form
+                            onSubmit={submitLogin}
+                        >
+                            <div className="form-group">
+                                <label htmlFor="txtEmail">Correo Electrónico</label>
 
-                            <input
-                                type="password"
-                                className="form-control"
-                                id="txtPassword"
-                                name='password'
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
-                            />
-                        </div>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    id="txtEmail"
+                                    name='email'
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value)}
+                                />
+                            </div>
 
-                        <div className="form-group float-right">
-                            <Link to={'/auth/singup'} className='btn btn-link'>
-                                Crear cuenta
-                            </Link>
+                            <div className="form-group">
+                                <label htmlFor="txtPassword">Contraseña</label>
 
-                            <button type="submit" className="btn btn-primary">Iniciar Sesión</button>
-                        </div>
-                    </form>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    id="txtPassword"
+                                    name='password'
+                                    value={password}
+                                    onChange={e => setPassword(e.target.value)}
+                                />
+                            </div>
+
+                            <div className="form-group ">
+                                <button type="submit" className="btn btn-primary">Iniciar Sesión</button>
+                            </div>
+
+                            <div className="form-group ">
+                                <Link to={'/auth/singup'} className='btn btn-link'>
+                                    Crear cuenta
+                                </Link>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div className="col-md-3"></div>
                 </div>
 
-                <div className="col-md-3"></div>
             </div>
         </Fragment>
     )
