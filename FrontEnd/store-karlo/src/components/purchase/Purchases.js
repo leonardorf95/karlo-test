@@ -59,7 +59,7 @@ const Purchases = () => {
                                             <th scope='col'>Acciones</th>
                                             <th scope='col'>
                                                 <Link to={'/purchase/new'} className='btn btn-success btn-small'>
-                                                    <i class="fas fa-plus"></i>
+                                                    <i className="fas fa-plus"></i>
                                                 </Link>
                                             </th>
                                         </tr>

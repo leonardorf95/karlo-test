@@ -54,7 +54,7 @@ const Users = () => {
                                             <th scope='col'>Acciones</th>
                                             <th scope='col'>
                                                 <Link to={'/users/new'} className='btn btn-success btn-small'>
-                                                    <i class="fas fa-plus"></i>
+                                                    <i className="fas fa-plus"></i>
                                                 </Link>
                                             </th>
                                         </tr>
