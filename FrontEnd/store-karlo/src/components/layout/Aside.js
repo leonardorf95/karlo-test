@@ -21,10 +21,10 @@ const Aside = () => {
                 <nav className="navbar navbar-expand-sm navbar-dark bg-dark align-items-start flex-sm-column flex-row">
                     &nbsp;
                     <Link to='/' className='navbar-brand'>
-                        <i class="fas fa-store"></i> Karlo Store
+                        <i className="fas fa-store"></i> Karlo Store
                     </Link>
 
-                    <a href className="navbar-toggler" data-toggle="collapse" data-target=".sidebar">
+                    <a href='#' className="navbar-toggler" data-toggle="collapse" data-target=".sidebar">
                         <span className="navbar-toggler-icon"></span>
                     </a>
 
@@ -32,19 +32,19 @@ const Aside = () => {
                         <ul className="flex-column navbar-nav w-100 justify-content-between">
                             <li className="nav-item">
                                 <Link to='/users/' className='nav-link px-0 text-truncate'>
-                                    <i class="fas fa-users"></i>Usuarios
+                                    <i className="fas fa-users"></i>Usuarios
                                 </Link>
                             </li>
 
                             <li className="nav-item">
                                 <Link to='/products/' className='nav-link px-0 text-truncate'>
-                                    <i class="fas fa-tshirt"></i>Productos
+                                    <i className="fas fa-tshirt"></i>Productos
                                 </Link>
                             </li>
 
                             <li className="nav-item">
                                 <Link to='/purchase/' className='nav-link px-0 text-truncate'>
-                                    <i class="fas fa-file-invoice"></i> Ordenes de Compra
+                                    <i className="fas fa-file-invoice"></i> Ordenes de Compra
                                 </Link>
                             </li>
 
@@ -54,7 +54,7 @@ const Aside = () => {
                                     className='btn btn-link px-0 text-truncate'
                                     onClick={submitLogut}
                                 >
-                                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                                    <i className="fas fa-sign-out-alt"></i> Cerrar Sesión
                                 </button>
                             </li>
                         </ul>
