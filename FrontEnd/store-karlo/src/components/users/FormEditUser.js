@@ -55,39 +55,51 @@ const FormEditUser = () => {
                     <Aside />
 
                     <main className="col bg-faded py-3">
-                        <h1>Detalle usuario</h1>
+                        <div className="row">
+                            <div className="col-md-3"></div>
 
-                        <form
-                            onSubmit={submitDetail}
-                        >
-                            <div className="form-group">
-                                <label htmlFor="txtName">Nombre</label>
+                            <div className="col-md-6">
+                                <h1>Detalle usuario</h1>
 
-                                <input 
-                                    type="text" 
-                                    className="form-control" 
-                                    id="txtName" 
-                                    name='name'
-                                    disabled={true}
-                                    value={name} />
+                                <br />
+
+                                <hr />
+                                
+                                <form
+                                    onSubmit={submitDetail}
+                                >
+                                    <div className="form-group">
+                                        <label htmlFor="txtName">Nombre</label>
+
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="txtName"
+                                            name='name'
+                                            disabled={true}
+                                            value={name} />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="txtEmail">Email address</label>
+
+                                        <input
+                                            type="email"
+                                            className="form-control"
+                                            id="txtEmail"
+                                            name='email'
+                                            disabled={true}
+                                            value={email} />
+                                    </div>
+
+                                    <div className="form-group float-right">
+                                        <button type="submit" className="btn btn-primary">Regresar</button>
+                                    </div>
+                                </form>
                             </div>
 
-                            <div className="form-group">
-                                <label htmlFor="txtEmail">Email address</label>
-
-                                <input 
-                                    type="email" 
-                                    className="form-control" 
-                                    id="txtEmail" 
-                                    name='email'
-                                    disabled={true}
-                                    value={email} />
-                            </div>
-
-                            <div className="form-group float-right">
-                                <button type="submit" className="btn btn-primary">Regresar</button>
-                            </div>
-                        </form>
+                            <div className="col-md-3"></div>
+                        </div>
                     </main>
                 </div>
             </div>

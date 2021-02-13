@@ -56,62 +56,74 @@ const FormNewProduct = ({ history }) => {
                     <Aside />
 
                     <main className="col bg-faded py-3">
-                        <h1>Crear Producto</h1>
+                        <div className="row">
+                            <div className="col-md-3"></div>
 
-                        {alert ? (<p className={alert.classes}>{alert.message}</p>) : null}
+                            <div className="col-md-6">
+                                <h1>Crear Producto</h1>
 
-                        <form
-                            onSubmit={submitANewProdut}
-                        >
-                            <div className="form-group">
-                                <label htmlFor="txtName">Nombre</label>
+                                <br />
+                                
+                                {alert ? (<p className={alert.classes}>{alert.message}</p>) : null}
 
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    id="txtName"
-                                    name='name'
-                                    value={name}
-                                    onChange={e => setName(e.target.value)}
-                                />
+                                <hr />
+                                
+                                <form
+                                    onSubmit={submitANewProdut}
+                                >
+                                    <div className="form-group">
+                                        <label htmlFor="txtName">Nombre</label>
+
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="txtName"
+                                            name='name'
+                                            value={name}
+                                            onChange={e => setName(e.target.value)}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="txtQty">Cantidad</label>
+
+                                        <input
+                                            type="number"
+                                            className="form-control"
+                                            id="txtQty"
+                                            name='quantity'
+                                            min='0'
+                                            value={quantity}
+                                            onChange={e => setQty(Number(e.target.value))}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="txtPrice">Precio</label>
+
+                                        <input
+                                            type="number"
+                                            className="form-control"
+                                            id="txtPrice"
+                                            name='price'
+                                            min='0'
+                                            step="0.01"
+                                            value={price}
+                                            onChange={e => setPrice(Number(e.target.value))}
+                                        />
+                                    </div>
+
+                                    <div className="form-group float-right">
+                                        <button type="submit" className="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
+
+                                {loadingProcess ? <p>Cargando...</p> : null}
+                                {errorProcess ? <p className='alert alert-danger p2 mt-4 text-center'>Hubo un Error</p> : null}
                             </div>
 
-                            <div className="form-group">
-                                <label htmlFor="txtQty">Cantidad</label>
-
-                                <input
-                                    type="number"
-                                    className="form-control"
-                                    id="txtQty"
-                                    name='quantity'
-                                    min='0'
-                                    value={quantity}
-                                    onChange={e => setQty(Number(e.target.value))}
-                                />
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="txtPrice">Precio</label>
-
-                                <input
-                                    type="number"
-                                    className="form-control"
-                                    id="txtPrice"
-                                    name='price'
-                                    min='0'
-                                    step="0.01"
-                                    value={price}
-                                    onChange={e => setPrice(Number(e.target.value))}
-                                />
-                            </div>
-
-                            <div className="form-group float-right">
-                                <button type="submit" className="btn btn-primary">Submit</button>
-                            </div>
-                        </form>
-
-                        {loadingProcess ? <p>Cargando...</p> : null}
-                        {errorProcess ? <p className='alert alert-danger p2 mt-4 text-center'>Hubo un Error</p> : null}
+                            <div className="col-md-3"></div>
+                        </div>
                     </main>
                 </div>
             </div>

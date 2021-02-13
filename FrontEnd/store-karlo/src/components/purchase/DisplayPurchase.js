@@ -52,7 +52,7 @@ const DisplayPurchase = ({ purchase }) => {
                         type='button'
                         onClick={() => redirectToDetail(purchase)}
                     >
-                        Editar
+                        Ver Detalle
                     </button>
                 </td>
                 <td>

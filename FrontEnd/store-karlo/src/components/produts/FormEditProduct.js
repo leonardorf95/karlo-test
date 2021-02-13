@@ -58,57 +58,69 @@ const FormEditProduct = () => {
                     <Aside />
 
                     <main className="col bg-faded py-3">
-                        <h1>Edita el producto</h1>
+                        <div className="row">
+                            <div className="col-md-3"></div>
 
-                        <form
-                            onSubmit={submitUpdateProduct}
-                        >
-                            <div className="form-group">
-                                <label htmlFor="txtName">Nombre</label>
+                            <div className="col-md-6">
+                                <h1>Edita el producto</h1>
 
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    id="txtName"
-                                    name='name'
-                                    value={name}
-                                    onChange={onChangeForm}
-                                />
+                                <br />
+
+                                <hr />
+
+                                <form
+                                    onSubmit={submitUpdateProduct}
+                                >
+                                    <div className="form-group">
+                                        <label htmlFor="txtName">Nombre</label>
+
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="txtName"
+                                            name='name'
+                                            value={name}
+                                            onChange={onChangeForm}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="txtQty">Cantidad</label>
+
+                                        <input
+                                            type="number"
+                                            className="form-control"
+                                            id="txtQty"
+                                            name='quantity'
+                                            min='0'
+                                            value={quantity}
+                                            onChange={onChangeForm}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="txtPrice">Precio</label>
+
+                                        <input
+                                            type="number"
+                                            className="form-control"
+                                            id="txtPrice"
+                                            name='price'
+                                            min='0'
+                                            step="0.01"
+                                            value={price}
+                                            onChange={onChangeForm}
+                                        />
+                                    </div>
+
+                                    <div className="form-group float-right">
+                                        <button type="submit" className="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
                             </div>
 
-                            <div className="form-group">
-                                <label htmlFor="txtQty">Cantidad</label>
-
-                                <input
-                                    type="number"
-                                    className="form-control"
-                                    id="txtQty"
-                                    name='quantity'
-                                    min='0'
-                                    value={quantity}
-                                    onChange={onChangeForm}
-                                />
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="txtPrice">Precio</label>
-
-                                <input
-                                    type="number"
-                                    className="form-control"
-                                    id="txtPrice"
-                                    name='price'
-                                    min='0'
-                                    step="0.01"
-                                    value={price}
-                                    onChange={onChangeForm}
-                                />
-                            </div>
-
-                            <div className="form-group float-right">
-                                <button type="submit" className="btn btn-primary">Submit</button>
-                            </div>
-                        </form>
+                            <div className="col-md-3"></div>
+                        </div>
                     </main>
                 </div>
             </div>

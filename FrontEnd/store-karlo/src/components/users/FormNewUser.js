@@ -78,72 +78,84 @@ const FormNewUser = ({ history }) => {
                     <Aside />
 
                     <main className="col bg-faded py-3">
-                        <h1>Crear usuario</h1>
+                        <div className="row">
+                            <div className="col-md-3"></div>
 
-                        {alert ? (<p className={alert.classes}>{alert.message}</p>) : null}
+                            <div className="col-md-6">
+                                <h1>Crear usuario</h1>
 
-                        <form
-                            onSubmit={submitANewUser}
-                        >
-                            <div className="form-group">
-                                <label htmlFor="txtName">Nombre</label>
+                                <br />
+                                
+                                {alert ? (<p className={alert.classes}>{alert.message}</p>) : null}
 
-                                <input 
-                                    type="text" 
-                                    className="form-control" 
-                                    id="txtName" 
-                                    name='name' 
-                                    value={name}
-                                    onChange={e => setName(e.target.value)}
-                                />
+                                <hr />
+                                
+                                <form
+                                    onSubmit={submitANewUser}
+                                >
+                                    <div className="form-group">
+                                        <label htmlFor="txtName">Nombre</label>
+
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="txtName"
+                                            name='name'
+                                            value={name}
+                                            onChange={e => setName(e.target.value)}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="txtEmail">Email address</label>
+
+                                        <input
+                                            type="email"
+                                            className="form-control"
+                                            id="txtEmail"
+                                            name='email'
+                                            value={email}
+                                            onChange={e => setEmail(e.target.value)}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="txtPassword">Password</label>
+
+                                        <input
+                                            type="password"
+                                            className="form-control"
+                                            id="txtPassword"
+                                            name='password'
+                                            value={password}
+                                            onChange={e => setPassword(e.target.value)}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="txtConfirmPassword">Confirmar Password</label>
+
+                                        <input
+                                            type="password"
+                                            className="form-control"
+                                            id="txtConfirmPassword"
+                                            name='confirm-password'
+                                            value={confirmPassword}
+                                            onChange={e => setConfirmPassword(e.target.value)}
+                                        />
+                                    </div>
+
+                                    <div className="form-group float-right">
+                                        <button type="submit" className="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
+
+                                {loadingProcess ? <p>Cargando...</p> : null}
+                                {errorProcess ? <p className='alert alert-danger p2 mt-4 text-center'>Hubo un Error</p> : null}
                             </div>
 
-                            <div className="form-group">
-                                <label htmlFor="txtEmail">Email address</label>
-
-                                <input 
-                                    type="email" 
-                                    className="form-control" 
-                                    id="txtEmail" 
-                                    name='email'
-                                    value={email}
-                                    onChange={e => setEmail(e.target.value)}
-                                />
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="txtPassword">Password</label>
-
-                                <input 
-                                    type="password" 
-                                    className="form-control" 
-                                    id="txtPassword" 
-                                    name='password'
-                                    value={password}
-                                    onChange={e => setPassword(e.target.value)}
-                                />
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="txtConfirmPassword">Confirmar Password</label>
-
-                                <input 
-                                    type="password" 
-                                    className="form-control" 
-                                    id="txtConfirmPassword" 
-                                    name='confirm-password'
-                                    value={confirmPassword}
-                                    onChange={e => setConfirmPassword(e.target.value)}
-                                />
-                            </div>
-
-                            <div className="form-group float-right">
-                                <button type="submit" className="btn btn-primary">Submit</button>
-                            </div>
-                        </form>
-
-                        {loadingProcess ? <p>Cargando...</p> : null}
-                        {errorProcess ? <p className='alert alert-danger p2 mt-4 text-center'>Hubo un Error</p> : null}
+                            <div className="col-md-3"></div>
+                        </div>
                     </main>
                 </div>
             </div>
