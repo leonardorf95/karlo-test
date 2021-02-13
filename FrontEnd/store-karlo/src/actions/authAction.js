@@ -17,6 +17,16 @@ export function logInAction(user) {
             localStorage.setItem('token', token);
 
             dispatch(singInSuccess(token));
+
+            Swal.fire(
+                'Éxitoso',
+                'Se ha iniciado sesión de manera correcta',
+                'success'
+            )
+
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 3000);
         } catch (error) {
             console.log(error);
 
