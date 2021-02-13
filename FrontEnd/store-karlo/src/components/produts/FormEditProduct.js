@@ -59,15 +59,19 @@ const FormEditProduct = () => {
 
                     <main className="col bg-faded py-3">
                         <div className="row">
-                            <div className="col-md-3"></div>
-
-                            <div className="col-md-6">
-                                <h1>Edita el producto</h1>
+                            <div className="col-md-12 text-center">
+                                <h1>Editar Producto</h1>
 
                                 <br />
+                            </div>
+                        </div>
 
-                                <hr />
+                        <hr />
 
+                        <div className='row'>
+                            <div className="col-md-2"></div>
+
+                            <div className="col-md-8">
                                 <form
                                     onSubmit={submitUpdateProduct}
                                 >
@@ -119,12 +123,12 @@ const FormEditProduct = () => {
                                 </form>
                             </div>
 
-                            <div className="col-md-3"></div>
+                            <div className="col-md-2"></div>
                         </div>
                     </main>
                 </div>
             </div>
-        </Fragment>
+        </Fragment >
     )
 }
 

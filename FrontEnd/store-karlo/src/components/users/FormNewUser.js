@@ -79,17 +79,21 @@ const FormNewUser = ({ history }) => {
 
                     <main className="col bg-faded py-3">
                         <div className="row">
-                            <div className="col-md-3"></div>
-
-                            <div className="col-md-6">
-                                <h1>Crear usuario</h1>
+                            <div className="col-md-12 text-center">
+                                <h1>Crear Nuevo Usuario</h1>
 
                                 <br />
-                                
-                                {alert ? (<p className={alert.classes}>{alert.message}</p>) : null}
 
-                                <hr />
-                                
+                                {loadingProcess ? (<p className='text-center mt-4'>Cargando...</p>) : null}
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div className="row">
+                            <div className="col-md-2"></div>
+
+                            <div className="col-md-8">
                                 <form
                                     onSubmit={submitANewUser}
                                 >
@@ -154,7 +158,7 @@ const FormNewUser = ({ history }) => {
                                 {errorProcess ? <p className='alert alert-danger p2 mt-4 text-center'>Hubo un Error</p> : null}
                             </div>
 
-                            <div className="col-md-3"></div>
+                            <div className="col-md-2"></div>
                         </div>
                     </main>
                 </div>

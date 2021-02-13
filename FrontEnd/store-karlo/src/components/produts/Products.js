@@ -46,9 +46,9 @@ const Products = () => {
                         <hr />
 
                         <div className="row">
-                            <div className="col-md-3"></div>
+                            <div className="col-md-2"></div>
 
-                            <div className="col-md-6 text-center">
+                            <div className="col-md-8 text-center">
                                 <table className='table table-responsive'>
                                     <thead className='thead-dark'>
                                         <tr>
@@ -76,7 +76,7 @@ const Products = () => {
                                 </table>
                             </div>
 
-                            <div className="col-md-3"></div>
+                            <div className="col-md-2"></div>
                         </div>
                     </main>
                 </div>

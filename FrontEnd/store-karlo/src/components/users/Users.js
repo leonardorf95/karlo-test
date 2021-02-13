@@ -40,11 +40,12 @@ const Users = () => {
                             </div>
                         </div>
 
-<hr/>
-                        <div className="row">
-                            <div className="col-md-3"></div>
+                        <hr/>
 
-                            <div className="col-md-6 text-center">
+                        <div className="row">
+                            <div className="col-md-2"></div>
+
+                            <div className="col-md-8">
                                 <table className='table table-responsive'>
                                     <thead className='thead-dark'>
                                         <tr>
@@ -71,7 +72,7 @@ const Users = () => {
                                 </table>
                             </div>
 
-                            <div className="col-md-3"></div>
+                            <div className="col-md-2"></div>
                         </div>
                     </main>
                 </div>

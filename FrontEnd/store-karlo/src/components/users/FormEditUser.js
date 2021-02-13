@@ -56,15 +56,19 @@ const FormEditUser = () => {
 
                     <main className="col bg-faded py-3">
                         <div className="row">
-                            <div className="col-md-3"></div>
-
-                            <div className="col-md-6">
-                                <h1>Detalle usuario</h1>
+                            <div className="col-md-12 text-center">
+                                <h1>Detalle de Usuario</h1>
 
                                 <br />
+                            </div>
+                        </div>
 
-                                <hr />
-                                
+                        <hr />
+
+                        <div className="row">
+                            <div className="col-md-2"></div>
+
+                            <div className="col-md-8">
                                 <form
                                     onSubmit={submitDetail}
                                 >
@@ -98,7 +102,7 @@ const FormEditUser = () => {
                                 </form>
                             </div>
 
-                            <div className="col-md-3"></div>
+                            <div className="col-md-2"></div>
                         </div>
                     </main>
                 </div>
