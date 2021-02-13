@@ -42,6 +42,10 @@ export function createNewProductAction(product) {
                 title: 'Se produjo un error',
                 text: 'Hubo un error verifica que toda la información es correcta'
             });
+
+            localStorage.removeItem('token');
+
+            window.location.href = '/auth/singin';
         }
     }
 }
@@ -88,6 +92,10 @@ export function getProductsAction() {
                 title: 'Se produjo un error',
                 text: 'Hubo un error no se pudo completar la petición'
             });
+
+            localStorage.removeItem('token');
+
+            window.location.href = '/auth/singin';
         }
     }
 }
@@ -137,6 +145,10 @@ export function deleteProductAction(id) {
                 title: 'Se produjo un error',
                 text: 'Hubo un error no se pudo completar la petición'
             });
+
+            localStorage.removeItem('token');
+
+            window.location.href = '/auth/singin';
         }
     }
 }
@@ -191,6 +203,10 @@ export function updateProdutAction(product) {
                 title: 'Se produjo un error',
                 text: 'Hubo un error no se pudo completar la petición'
             });
+
+            localStorage.removeItem('token');
+
+            window.location.href = '/auth/singin';
         }
     }
 }

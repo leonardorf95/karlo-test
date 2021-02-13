@@ -36,6 +36,10 @@ export function createNewUserAction(user) {
                 title: 'Se produjo un error',
                 text: 'Hubo un error verifica que toda la información es correcta'
             });
+
+            localStorage.removeItem('token');
+
+            window.location.href = '/auth/singin';
         }
     }
 }
@@ -77,6 +81,10 @@ export function getUsersAction() {
                 title: 'Se produjo un error',
                 text: 'Hubo un error verifica que la conexión sea estable'
             });
+
+            localStorage.removeItem('token');
+
+            window.location.href = '/auth/singin';
         }
     }
 }
@@ -124,6 +132,10 @@ export function deleteUserAction(id) {
                 title: 'Se produjo un error',
                 text: 'Hubo un error verifica que la conexión sea estable'
             });
+
+            localStorage.removeItem('token');
+
+            window.location.href = '/auth/singin';
         }
     }
 }
